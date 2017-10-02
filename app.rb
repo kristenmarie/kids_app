@@ -133,18 +133,89 @@ end
 get "/grats" do
   @current_user = User.find_by name: @user
   erb(:grats)
+end
 
-  get "/letters" do
-    letters = ['A','B','C','D','E','F','G','H','I','K','L','M','N','O','P','Q','R','S','T', 'U','V','W','X','Y','Z']
+get "/color1" do
+  @current_user = User.find_by name: @user
+  erb(:color1)
+end
 
-    letters.each do |letter|
-      Letter.create({name: letter})
-    end
-    @letters = Letter.all
-    erb(:letters)
+post "/color1" do
+  answer = params["color"]
+  if answer == "blue"
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/color2'
+  else
+    flash[:color1] = 'INCORRECT. <a href="/color1">Back</a> '
   end
+end
 
-  get "/letters/:id" do
-    @letter = Letter.find(params.fetch('id').to_i)
-    erb(:letter)
+get "/color2" do
+  @current_user = User.find_by name: @user
+  erb(:color2)
+end
+
+post "/color2" do
+  answer = params["color"]
+  if answer == "green"
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/color3'
+  else
+    flash[:color2] = 'INCORRECT. <a href="/color2">Back</a> '
+  end
+end
+
+get "/color3" do
+  @current_user = User.find_by name: @user
+  erb(:color3)
+end
+
+post "/color3" do
+  answer = params["color"]
+  if answer == "yellow"
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/color4'
+  else
+    flash[:color3] = 'INCORRECT. <a href="/color3">Back</a> '
+  end
+end
+
+get "/color4" do
+  @current_user = User.find_by name: @user
+  erb(:color4)
+end
+
+post "/color4" do
+  answer = params["color"]
+  if answer == "red"
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/color4'
+  else
+    flash[:color4] = 'INCORRECT. <a href="/color4">Back</a> '
+  end
+end
+
+
+
+get "/letters" do
+  letters = ['A','B','C','D','E','F','G','H','I','K','L','M','N','O','P','Q','R','S','T', 'U','V','W','X','Y','Z']
+
+  letters.each do |letter|
+    Letter.create({name: letter})
+  end
+  @letters = Letter.all
+  erb(:letters)
+end
+
+get "/letters/:id" do
+  @letter = Letter.find(params.fetch('id').to_i)
+  erb(:letter)
 end

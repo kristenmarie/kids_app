@@ -1,0 +1,34 @@
+<div class="home-button">
+  <button type="button" name="button" class="btn"><a href="/">Home</a></button>
+</div>
+
+<h2>Colors Game </h2>
+<h3>Current Score: <%= @current_user.score %></h3>
+
+<div class="color_picture">
+  <center><img src="../img/whale.png"></center>
+</div>
+
+<form action="/color1" method="post">
+  <div class="radio">
+    <label>
+      <input name="color" type="radio" value="blue">
+      Blue
+    </label>
+  </div>
+
+  <div class="radio">
+    <label>
+      <input name="color" type="radio" value="red">
+      Red
+    </label>
+  </div>
+
+  <div class="radio">
+    <label>
+      <input name="color" type="radio" value="yellow">
+      Yellow
+    </label>
+  </div>
+  <button type="submit" name="button" class="btn">Go!</button>
+</form>

@@ -38,5 +38,12 @@ end
 
 get "/letters/:id" do
   @letter = Letter.find(params.fetch('id').to_i)
+
+  words = ['apple','ants', 'antelope']
+  words.each do |word|
+    Word.create({name: word})
+  end
+  @words = Word.all
+
   erb(:letter)
 end

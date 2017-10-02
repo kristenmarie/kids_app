@@ -2,6 +2,12 @@
 
 
 <h3>Words</h3>
+<ul>
+  <% @words.each do |word| %>
+  <li><%= word.name %></li>
+  <%end%>
+</ul>
+
   <form class="form-group" action="/letter/" method="post">
     <label for="word">Add your word:</label>
     <input type="text" name="word" class="form-control"><br>

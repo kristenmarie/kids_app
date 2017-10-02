@@ -30,3 +30,7 @@ post "/logout" do
   session.clear
   redirect "/"
 end
+
+get "/numbers" do
+  erb(:numbers)
+end

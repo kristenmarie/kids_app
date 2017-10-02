@@ -1,0 +1,14 @@
+<h1>Numbers Game</h1>
+<h3>Current Score: <%= @current_user.score %></h3>
+
+<div class="number_picture">
+  <center><img src="../img/monkey.jpg"></center>
+</div>
+
+<form action="/number2" method="post">
+  <div class="form-group">
+    <label for="answer">How many monkeys are there?</label>
+    <input type="integer" name="answer" class="form-control">
+  </div>
+  <button type="submit" name="button" class="btn">Go!</button>
+</form>

@@ -21,6 +21,7 @@ post "/login" do
     redirect back
   else
     @error_type = user
+    session.clear
     erb(:errors)
   end
 end

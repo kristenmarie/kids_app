@@ -1,0 +1,24 @@
+<h2>Welcome <%= @user %> </h2>
+
+
+<% if !@user %>
+  <form action="/login" method="post">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" name="username" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" name="password" class="form-control">
+    </div>
+    <button type="submit" name="button" class="btn">Login</button>
+  </form>
+<% else %>
+  <form action="/logout" method="post">
+    <button type="submit" name="button" class="btn">Log Out</button>
+  </form>
+  #buttons for other games
+  <button type="button" name="button">Alphabet</button>
+  <button type="button" name="button">Numbers</button>
+  <button type="button" name="button">Colors</button>
+<% end %>

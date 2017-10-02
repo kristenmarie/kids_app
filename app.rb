@@ -14,6 +14,19 @@ get "/" do
 end
 
 post "/login" do
+  username = params.fetch("username")
+  User.all.each do |user|
+    if user.name == username
+      session[:id] = params.fetch("username")
+      password = params.fetch("password")
+      redirect '/'
+    else
+      flash[:number1] = 'Username does not exist. <a href="/">Back</a> '
+    end
+  end
+end
+
+post "/create-user" do
   session[:id] = params.fetch("username")
   password = params.fetch("password")
   user = User.new({name: params["username"], score: 0})

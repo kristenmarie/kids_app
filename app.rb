@@ -31,6 +31,23 @@ post "/logout" do
   redirect "/"
 end
 
-get "/numbers" do
-  erb(:numbers)
+get "/number1" do
+  erb(:number1)
+end
+
+post "/number1" do
+  answer = params["answer"].to_i
+  if answer == 1
+    user = User.find_by name: @user
+    score = user.score.to_i + 1
+    user.update({score: score})
+    erb(:number2)
+  else
+    @results = "Oops! Try again to move on."
+    redirect back
+  end
+end
+
+get "/number2" do
+  erb(:number2)
 end

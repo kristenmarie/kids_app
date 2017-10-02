@@ -1,13 +1,16 @@
-<h2>Welcome <%= @user %> </h2>
 <% if @user %>
-  <h3>Your score is: <%= @current_user.score %></h3>
+  <div class="home">
+    <h2>Welcome <%= @user %>!</h2>
+    <h3>Your score is: </h3>
+    <h3><%= @current_user.score %></h3>
+  </div>
 <% end %>
 
 <% if !@user %>
-  <div class="row">
+  <div class="row login">
     <div class="col-md-6">
-      <h3>Existing User:</h3>
       <form action="/login" method="post">
+      <h3>Existing User:</h3>
         <div class="form-group">
           <label for="username">Username:</label>
           <input type="text" name="username" class="form-control" required>
@@ -34,17 +37,16 @@
         <button type="submit" name="button" class="btn">Create Account</button>
       </form>
     </div>
-
   </div>
 
 
 <% else %>
-  <form action="/logout" method="post">
+  <center><form action="/logout" method="post">
     <button type="submit" name="button" class="btn">Log Out</button>
   </form>
   <!-- buttons for other games --><br>
   <h3>Choose a game:</h3>
   <button type="button" name="button" class="btn"><a href="/letters">Letters</a></button>
   <button type="button" name="button" class="btn"><a href="/number1">Numbers</a></button>
-  <button type="button" name="button" class="btn"><a href="/color1">Colors</a></button>
+  <button type="button" name="button" class="btn"><a href="/color1">Colors</a></button></center>
 <% end %>

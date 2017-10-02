@@ -1,34 +1,48 @@
-<div class="home-button">
-  <button type="button" name="button" class="btn"><a href="/">Home</a></button>
+<div class="row">
+  <div class="col-md-4">
+    <h3>Current Score: <%= @current_user.score %></h3>
+  </div>
+  <div class="col-md-4">
+    <center><h2>Colors Game </h2></center>
+  </div>
+  <div class="col-md-4">
+    <div class="home-button">
+      <button type="button" name="button" class="btn"><a href="/">Home</a></button>
+    </div>
+  </div>
 </div>
 
-<h2>Colors Game </h2>
-<h3>Current Score: <%= @current_user.score %></h3>
 
 <div class="color_picture">
   <center><img src="../img/gator.png"></center>
 </div>
 
-<form action="/color2" method="post">
-  <div class="radio">
+<center><form action="/color2" method="post">
+  <div class="radio-inline">
     <label>
-      <input name="color" type="radio" value="red">
-      Red
+      <input name="color" type="radio" value="red" class="radio">
+      <div class="text">
+        Red
+      </div>
     </label>
   </div>
 
-  <div class="radio">
+  <div class="radio-inline">
     <label>
-      <input name="color" type="radio" value="blue">
-      Blue
+      <input name="color" type="radio" value="blue" class="radio">
+      <div class="text">
+        Blue
+      </div>
     </label>
   </div>
 
-  <div class="radio">
+  <div class="radio-inline">
     <label>
-      <input name="color" type="radio" value="green">
-      Green
+      <input name="color" type="radio" value="green" class="radio">
+      <div class="text">
+        Green
+      </div>
     </label>
   </div>
-  <button type="submit" name="button" class="btn">Go!</button>
-</form>
+  <br><button type="submit" name="button" class="btn">Go!</button>
+</form></center>

@@ -133,4 +133,18 @@ end
 get "/grats" do
   @current_user = User.find_by name: @user
   erb(:grats)
+
+  get "/letters" do
+    letters = ['A','B','C','D','E','F','G','H','I','K','L','M','N','O','P','Q','R','S','T', 'U','V','W','X','Y','Z']
+
+    letters.each do |letter|
+      Letter.create({name: letter})
+    end
+    @letters = Letter.all
+    erb(:letters)
+  end
+
+  get "/letters/:id" do
+    @letter = Letter.find(params.fetch('id').to_i)
+    erb(:letter)
 end

@@ -1,0 +1,11 @@
+<center><h1>Learn the alphabet!</h1></center>
+
+<ul>
+   <% @letters.each do |letter| %>
+    <li><a href="/letters/<%=letter.id%>"><%=letter.name%></a></li>
+    <% end %>
+</ul>
+
+
+
+<a href='/'>HOME</a>

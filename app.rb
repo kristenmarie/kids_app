@@ -197,12 +197,28 @@ post "/color4" do
     @current_user = User.find_by name: @user
     score = @current_user.score.to_i + 1
     @current_user.update({score: score})
-    redirect '/color4'
+    redirect '/color5'
   else
     flash[:color4] = 'INCORRECT. <a href="/color4">Back</a> '
   end
 end
 
+get "/color5" do
+  @current_user = User.find_by name: @user
+  erb(:color5)
+end
+
+post "/color5" do
+  answer = params["color"]
+  if answer == "black"
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/grats'
+  else
+    flash[:color5] = 'INCORRECT. <a href="/color5">Back</a> '
+  end
+end
 
 
 get "/letters" do

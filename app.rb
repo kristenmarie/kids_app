@@ -23,4 +23,16 @@ post "/login" do
     @error_type = user
     erb(:errors)
   end
+
+
+  get "/letters" do
+    letters = ['A','B','C','D','E','F','G','H','I','K','L','M','N','O','P','Q','R','S','T', 'U','V','W','X','Y','Z']
+
+    letters.each do |letter|
+      Letter.create({name: letter})
+    end
+    @letters = Letter.all
+    erb(:letters)
+  end
+  
 end

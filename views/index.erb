@@ -1,5 +1,7 @@
 <h2>Welcome <%= @user %> </h2>
-
+<% if @user %>
+  <h3>Your score is: <%= @current_user.score %></h3>
+<% end %>
 
 <% if !@user %>
   <div class="row">

@@ -10,6 +10,7 @@ before do
 end
 
 get "/" do
+  @current_user = User.find_by name: @user
   erb(:index)
 end
 
@@ -93,4 +94,43 @@ post "/number3" do
   else
     flash[:number3] = 'INCORRECT. <a href="/number3">Back</a> '
   end
+end
+
+get "/number4" do
+  @current_user = User.find_by name: @user
+  erb(:number4)
+end
+
+post "/number4" do
+  answer = params["answer"].to_i
+  if answer == 4
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/number5'
+  else
+    flash[:number4] = 'INCORRECT. <a href="/number4">Back</a> '
+  end
+end
+
+get "/number5" do
+  @current_user = User.find_by name: @user
+  erb(:number5)
+end
+
+post "/number5" do
+  answer = params["answer"].to_i
+  if answer == 5
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/grats'
+  else
+    flash[:number5] = 'INCORRECT. <a href="/number5">Back</a> '
+  end
+end
+
+get "/grats" do
+  @current_user = User.find_by name: @user
+  erb(:grats)
 end

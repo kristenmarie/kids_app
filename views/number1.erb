@@ -1,9 +1,10 @@
-<h1>Numbers Game</h1>
+<h2>Numbers Game </h2>
+<h3>Current Score: <%= @current_user.score %></h3>
 
 <div class="number_picture">
   <center><img src="../img/pig.jpg"></center>
 </div>
-<%= @result %>
+
 <form action="/number1" method="post">
   <div class="form-group">
     <label for="answer">How many pigs are there?</label>

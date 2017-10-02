@@ -32,19 +32,19 @@ post "/logout" do
 end
 
 get "/number1" do
+  @current_user = User.find_by name: @user
   erb(:number1)
 end
 
 post "/number1" do
   answer = params["answer"].to_i
   if answer == 1
-    user = User.find_by name: @user
+    @current_user = User.find_by name: @user
     score = user.score.to_i + 1
     user.update({score: score})
-    erb(:number2)
+    redirect '/number2'
   else
-    @results = "Oops! Try again to move on."
-    redirect back
+    flash[:number1] = 'INCORRECT. <a href="/number1">Back</a> '
   end
 end
 

@@ -6,6 +6,7 @@ gem("rake")
 gem("pg")
 gem("sinatra")
 gem('actionview')
+gem('sinatra-flash')
 
 group(:test) do
   gem("rspec")

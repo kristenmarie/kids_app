@@ -4,11 +4,14 @@
 <h3>Words</h3>
 <ul>
   <% @words.each do |word| %>
-  <li><%= word.name %></li>
+    <% if word.letter_id == @letter.id %>
+      <li><%= word.name %></li>
+    <% end %>
   <%end%>
 </ul>
 
-  <form class="form-group" action="/letter/" method="post">
+  <form class="form-group" action="/add-word" method="post">
+    <input type="hidden" name="letter_id" value="<%= @letter.id%>">
     <label for="word">Add your word:</label>
     <input type="text" name="word" class="form-control"><br>
     <button type="submit" class="btn btn-primary">Add</button>

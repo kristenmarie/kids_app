@@ -1,9 +1,11 @@
-<center><h1>Define your letter "<%= @letter.name %>" </h1></center>
+<center><h1>Add a word that starts with "<%= @letter.name %>" </h1></center>
 
 
-<h3>Definitions</h3>
-
-
-
+<h3>Words</h3>
+  <form class="form-group" action="/letter/" method="post">
+    <label for="word">Add your word:</label>
+    <input type="text" name="word" class="form-control"><br>
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
 
 <a href='/'>HOME</a>

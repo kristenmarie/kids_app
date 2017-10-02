@@ -53,8 +53,8 @@ post "/number1" do
   answer = params["answer"].to_i
   if answer == 1
     @current_user = User.find_by name: @user
-    score = user.score.to_i + 1
-    user.update({score: score})
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
     redirect '/number2'
   else
     flash[:number1] = 'INCORRECT. <a href="/number1">Back</a> '
@@ -62,5 +62,35 @@ post "/number1" do
 end
 
 get "/number2" do
+  @current_user = User.find_by name: @user
   erb(:number2)
+end
+
+post "/number2" do
+  answer = params["answer"].to_i
+  if answer == 2
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/number3'
+  else
+    flash[:number2] = 'INCORRECT. <a href="/number2">Back</a> '
+  end
+end
+
+get "/number3" do
+  @current_user = User.find_by name: @user
+  erb(:number3)
+end
+
+post "/number3" do
+  answer = params["answer"].to_i
+  if answer == 3
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/number4'
+  else
+    flash[:number3] = 'INCORRECT. <a href="/number3">Back</a> '
+  end
 end

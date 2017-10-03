@@ -1,11 +1,17 @@
-<center><h1>Learn the alphabet!</h1></center>
-
-<h3>Current Score: <%= @current_user.score %></h3>
+<div class="row">
+  <center><h1>Learn the Alphabet!</h1></center>
+  <div class="col-md-4">
+    <h3>Current Score: <%= @current_user.score %></h3>
+  </div>
+  <div class="col-md-4">
+  </div>
+  <div class="col-md-4">
+    <button type="button" name="button" class="btn home-button"><a href='/'>Home</a></button>
+  </div>
+</div>
 
 <ul>
    <% @letters.each do |letter| %>
     <a class="letters" href="/letters/<%=letter.id%>"><%=letter.name%></a>
     <% end %>
 </ul>
-
-<button type="button" name="button" class="btn"><a href='/'>Home</a></button>

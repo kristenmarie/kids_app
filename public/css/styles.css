@@ -28,6 +28,10 @@ form {
   font-family: 'Roboto', sans-serif;
 }
 
+.home-button {
+  float: right;
+}
+
 .letters {
   padding: 5px;
   font-size: 150px;

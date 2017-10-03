@@ -32,6 +32,13 @@ form {
   float: right;
 }
 
+ul {
+  text-decoration: none;
+}
+
+p {
+  font-size: 20px;
+}
 .letters {
   padding: 5px;
   font-size: 150px;

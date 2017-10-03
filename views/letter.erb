@@ -4,28 +4,23 @@
     <h3>Current Score: <%= @current_user.score %></h3>
   </div>
   <div class="col-md-4">
+    <center><form class="form-group" action="/add-word" method="post">
+      <input type="hidden" name="letter_id" value="<%= @letter.id%>">
+      <label for="word">Add your word:</label>
+      <input type="text" name="word" class="form-control"><br>
+      <button type="submit" class="btn btn-primary">Add</button>
+    </form>
 
+      <% @words.each do |word| %>
+        <% if word.letter_id == @letter.id %>
+          <p><a href="/word_edit/<%=word.id%>"><%= word.name %></a></p>
+        <% end %>
+      <%end%></center>
   </div>
   <div class="col-md-4">
     <div class="home-button">
       <button type="button" name="button" class="btn"><a href="/">Home</a></button>
+      <button type="button" name="button" class="btn"><a href='/letters'>Back</a></button>
     </div>
   </div>
 </div>
-<ul>
-  <% @words.each do |word| %>
-    <% if word.letter_id == @letter.id %>
-      <li><a href="/word_edit/<%=word.id%>"><%= word.name %></a></li>
-    <% end %>
-  <%end%>
-</ul>
-
-  <center><form class="form-group" action="/add-word" method="post">
-    <input type="hidden" name="letter_id" value="<%= @letter.id%>">
-    <label for="word">Add your word:</label>
-    <input type="text" name="word" class="form-control"><br>
-    <button type="submit" class="btn btn-primary">Add</button>
-  </form>
-
-<button type="button" name="button" class="btn"><a href='/letters'>Back</a></button>
-<button type="button" name="button" class="btn"><a href='/'>Home</a></button></center>

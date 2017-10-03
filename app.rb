@@ -424,6 +424,8 @@ post "/spelling5" do
   else
     erb(:incorrect)
   end
+end
+
   get('/word_edit/:id') do
     @current_user = User.find_by name: @user
     @word = Word.find(params[:id])
@@ -448,5 +450,4 @@ post "/spelling5" do
     @word = Word.find(params.fetch("word_id").to_i)
     @word.delete
     redirect "/letters"
-
-end
+  end

@@ -1,7 +1,8 @@
 <h1>Edit the word "<%= @word.name%>" here!</h1>
 
-<div class="row">
+<h3>Current Score: <%= @current_user.score %></h3>
 
+<div class="row">
   <form class="form-group" action="/update-word" method="post">
     <div class="col-md-8">
       <label for="word">Update your word:</label>

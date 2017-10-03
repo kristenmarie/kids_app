@@ -1,5 +1,7 @@
 <center><h1>Learn the alphabet!</h1></center>
 
+<h3>Current Score: <%= @current_user.score %></h3>
+
 <ul>
    <% @letters.each do |letter| %>
     <a class="letters" href="/letters/<%=letter.id%>"><%=letter.name%></a>

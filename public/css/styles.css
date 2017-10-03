@@ -11,7 +11,7 @@ form {
 }
 
 .game {
-  max-width: 35px;
+  max-width: 45px;
 }
 
 .login {
@@ -28,7 +28,7 @@ form {
   padding: 5px;
   font-size: 150px;
   font-weight: bold;
-  font-family: 'CFCrayons-Regular';
+  font-family: 'Roboto', sans-serif;
 
   color: #f35626;
     background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);

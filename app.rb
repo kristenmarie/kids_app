@@ -34,7 +34,8 @@ end
 post "/create-user" do
   session[:id] = params.fetch("username")
   password = params.fetch("password")
-  user = User.new({name: params["username"], score: 0})
+  age = params.fetch("age").to_i
+  user = User.new({name: params["username"], score: 0, age: age})
   if user.save
     redirect back
   else
@@ -224,7 +225,6 @@ post "/color5" do
   end
 end
 
-
 get "/letters" do
   letters = ['A','B','C','D','E','F','G','H','I','K','L','M','N','O','P','Q','R','S','T', 'U','V','W','X','Y','Z']
 
@@ -249,5 +249,90 @@ post('/add-word') do
   else
     @error_type = word
     erb(:errors)
+  end
+end
+
+get("/math1") do
+  @current_user = User.find_by name: @user
+  erb(:math1)
+end
+
+post "/math1" do
+  answer = params["answer"].to_i
+  if answer == 10
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/math2'
+  else
+    erb(:incorrect)
+  end
+end
+
+get("/math2") do
+  @current_user = User.find_by name: @user
+  erb(:math2)
+end
+
+post "/math2" do
+  answer = params["answer"].to_i
+  if answer == 5
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/math3'
+  else
+    erb(:incorrect)
+  end
+end
+
+get("/math3") do
+  @current_user = User.find_by name: @user
+  erb(:math3)
+end
+
+post "/math3" do
+  answer = params["answer"].to_i
+  if answer == 20
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/math4'
+  else
+    erb(:incorrect)
+  end
+end
+
+get("/math4") do
+  @current_user = User.find_by name: @user
+  erb(:math4)
+end
+
+post "/math4" do
+  answer = params["answer"].to_i
+  if answer == 6
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/math5'
+  else
+    erb(:incorrect)
+  end
+end
+
+get("/math5") do
+  @current_user = User.find_by name: @user
+  erb(:math5)
+end
+
+post "/math5" do
+  answer = params["answer"]
+  if answer == "+"
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/grats'
+  else
+    erb(:incorrect)
   end
 end

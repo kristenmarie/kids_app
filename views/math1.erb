@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-md-4">
+    <h3>Current Score: <%= @current_user.score %></h3>
+  </div>
+  <div class="col-md-4">
+    <center><h2>Math Game </h2></center>
+  </div>
+  <div class="col-md-4">
+    <div class="home-button">
+      <button type="button" name="button" class="btn"><a href="/">Home</a></button>
+    </div>
+  </div>
+</div>
+
+<center><form action="/math1" method="post">
+  <div class="form-group">
+    <label for="answer" class="math_question">What is 4 + 6?</label>
+    <input type="integer" name="answer" class="form-control game">
+  </div>
+  <button type="submit" name="button" class="btn">Go!</button>
+</form></center>

@@ -2,7 +2,7 @@
   <div class="home">
     <h2>Welcome <%= @user %>!</h2>
     <h3>Your score is:</h3>
-    <h3> &#9734;<%= @current_user.score %> &#9734;</h3>
+    <h3> &#9734; <%= @current_user.score %> &#9734;</h3>
   </div>
 <% end %>
 
@@ -34,6 +34,8 @@
           <label for="password">Password:</label>
           <input type="password" name="password" class="form-control" placeholder="Username" required>
         </div>
+        <label for="age">Age:</label>
+        <input type="age" name="age" class="form-control" placeholder="Age" required> <br>
         <button type="submit" name="button" class="btn btn-primary">Create Account</button>
       </form>
     </div>
@@ -46,19 +48,35 @@
   <br>
   <img src="../img/penguins.png" alt="">
   <h3>Choose a game:</h3>
-  <div class="row">
-    <div class="col-md-4">
-      <button type="submit" name="button" class="btn"><a href="/letters">Letters</a></button><br><br>
-      <img src="../img/abc.jpg" class="front">
-    </div>
-    <div class="col-md-4">
-      <button type="submit" name="button" class="btn"><a href="/number1">Numbers</a></button><br><br>
-      <img src="../img/123.jpg" class="front">
-    </div>
-    <div class="col-md-4">
-      <button type="submit" name="button" class="btn"><a href="/color1">Colors</a></button><br><br>
-      <img src="../img/color.jpg" class="front">
-    </div>
+  <% if @current_user.age <= 6 %>
+    <div class="row">
+      <div class="col-md-4">
+        <button type="submit" name="button" class="btn"><a href="/letters">Letters</a></button><br><br>
+        <img src="../img/abc.jpg" class="front">
+      </div>
+      <div class="col-md-4">
+        <button type="submit" name="button" class="btn"><a href="/number1">Numbers</a></button><br><br>
+        <img src="../img/123.jpg" class="front">
+      </div>
+      <div class="col-md-4">
+        <button type="submit" name="button" class="btn"><a href="/color1">Colors</a></button><br><br>
+        <img src="../img/color.jpg" class="front">
+      </div>
+    <% else %>
+    <div class="row">
+      <div class="col-md-4">
+        <button type="submit" name="button" class="btn"><a href="/math1">Basic Math</a></button><br><br>
+        <!-- <img src="../img/abc.jpg" class="front"> -->
+      </div>
+      <div class="col-md-4">
+        <button type="submit" name="button" class="btn"><a href="/spell1">Spelling</a></button><br><br>
+        <!-- <img src="../img/123.jpg" class="front"> -->
+      </div>
+      <div class="col-md-4">
+        <button type="submit" name="button" class="btn"><a href="/animals1">Animal Science</a></button><br><br>
+        <!-- <img src="../img/color.jpg" class="front"> -->
+      </div>
+    <% end %>
   </div></center>
 
 <% end %>

@@ -24,7 +24,6 @@ form {
   font-family: 'Roboto', sans-serif;
 }
 
-
 .letters {
   padding: 5px;
   font-size: 150px;
@@ -86,6 +85,7 @@ h1 {
 body {
   font-family: 'Roboto', sans-serif;
   background-color: #bff0ff;
+  margin-bottom: 100px;
 }
 
 .text {
@@ -115,4 +115,9 @@ body {
 
 a {
   color: black;
+}
+
+.front {
+  height: 150px;
+  width: 250px;
 }

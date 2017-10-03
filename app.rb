@@ -26,7 +26,7 @@ post "/login" do
       password = params.fetch("password")
       redirect '/'
     else
-      redirect "/false_user"
+      erb(:false_user)
     end
   end
 end

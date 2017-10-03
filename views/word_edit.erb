@@ -1,0 +1,23 @@
+<h1>Edit the word "<%= @word.name%>" here!</h1>
+
+<h3>Current Score: <%= @current_user.score %></h3>
+
+<div class="row">
+  <form class="form-group" action="/update-word" method="post">
+    <div class="col-md-8">
+      <label for="word">Update your word:</label>
+      <input type="hidden" name="_method" value="patch">
+      <input type="hidden" name="word_id" value="<%=@word.id%>" class="form-control">
+      <input type="text" name="new_word" class="form-control"><br>
+      <button type="submit" class="btn btn-primary">Update</button>
+    </div>
+ </form>
+
+    <form class="form-group" action="/delete-word" method="post">
+      <div class="col-md-4">
+      <input type="hidden" name="_method" value="delete">
+      <input type="hidden" name="word_id" value="<%= @word.id %>" class="form-control">
+      <button type="submit" class="btn btn-danger" id="delete_word">Delete</button>
+      </div>
+    </form>
+</div>

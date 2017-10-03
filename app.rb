@@ -225,6 +225,7 @@ post "/color5" do
 end
 
 get "/letters" do
+  @current_user = User.find_by name: @user
   letters = ['A','B','C','D','E','F','G','H','I','K','L','M','N','O','P','Q','R','S','T', 'U','V','W','X','Y','Z']
 
   letters.each do |letter|
@@ -235,15 +236,19 @@ get "/letters" do
 end
 
 get "/letters/:id" do
+  @current_user = User.find_by name: @user
   @letter = Letter.find(params[:id])
   @words = Word.all()
   erb(:letter)
 end
 
 post('/add-word') do
+  @current_user = User.find_by name: @user
   letter_id = params.fetch("letter_id").to_i
   word = Word.new({name: params.fetch('word'), letter_id: letter_id})
   if word.save
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
     redirect '/letters/' + letter_id.to_s
   else
     @error_type = word
@@ -251,6 +256,7 @@ post('/add-word') do
   end
 end
 
+<<<<<<< HEAD
 get("/math1") do
   @current_user = User.find_by name: @user
   erb(:math1)
@@ -419,4 +425,55 @@ post "/spelling5" do
   else
     erb(:incorrect)
   end
+  get('/word_edit/:id') do
+    @current_user = User.find_by name: @user
+    @word = Word.find(params[:id])
+    @words = Word.all
+    erb(:word_edit)
+  end
+
+  patch('/update-word') do
+    @current_user = User.find_by name: @user
+    @word = Word.find(params.fetch("word_id").to_i)
+    if @word.charAt[0] == @letter.name
+      word.update({name: params["new_word"]})
+      redirect "/letters/" + word.letter_id.to_s
+    else
+      @error_type = word
+      erb(:error)
+    end
+  end
+
+  delete('/delete-word') do
+    @current_user = User.find_by name: @user
+    @word = Word.find(params.fetch("word_id").to_i)
+    @word.delete
+    redirect "/letters"
+
+=======
+get('/word_edit/:id') do
+  @current_user = User.find_by name: @user
+  @word = Word.find(params[:id])
+  @words = Word.all
+  erb(:word_edit)
+end
+
+patch('/update-word') do
+  @current_user = User.find_by name: @user
+  @word = Word.find(params.fetch("word_id").to_i)
+  if @word.charAt[0] == @letter.name
+    word.update({name: params["new_word"]})
+    redirect "/letters/" + word.letter_id.to_s
+  else
+    @error_type = word
+    erb(:error)
+  end
+end
+
+delete('/delete-word') do
+  @current_user = User.find_by name: @user
+  @word = Word.find(params.fetch("word_id").to_i)
+  @word.delete
+  redirect "/letters"
+>>>>>>> linda/snow
 end

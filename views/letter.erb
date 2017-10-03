@@ -1,11 +1,12 @@
 <center><h1>Add a word that starts with "<%= @letter.name %>" </h1></center>
 
+<h3>Current Score: <%= @current_user.score %></h3>
 
 <h3>Words</h3>
 <ul>
   <% @words.each do |word| %>
     <% if word.letter_id == @letter.id %>
-      <li><%= word.name %></li>
+      <li><a href="/word_edit/<%=word.id%>"><%= word.name %></a></li>
     <% end %>
   <%end%>
 </ul>

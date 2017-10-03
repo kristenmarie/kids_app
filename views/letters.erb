@@ -1,11 +1,8 @@
 <center><h1>Learn the alphabet!</h1></center>
+<center><button type="button" name="button" class="btn"><a href='/'>Home</a></button></center>
 
 <ul>
    <% @letters.each do |letter| %>
     <a class="letters" href="/letters/<%=letter.id%>"><%=letter.name%></a>
     <% end %>
 </ul>
-
-
-
-<a href='/'>HOME</a>

@@ -58,7 +58,7 @@ post "/number1" do
     @current_user.update({score: score})
     redirect '/number2'
   else
-    flash[:number1] = 'INCORRECT. <a href="/number1">Back</a> '
+    flash[:number1] = 'Opps, try again! <a href="/number1">Back</a> '
   end
 end
 
@@ -75,7 +75,7 @@ post "/number2" do
     @current_user.update({score: score})
     redirect '/number3'
   else
-    flash[:number2] = 'INCORRECT. <a href="/number2">Back</a> '
+    flash[:number2] =  'Opps, try again!  <a href="/number2">Back</a> '
   end
 end
 
@@ -92,7 +92,7 @@ post "/number3" do
     @current_user.update({score: score})
     redirect '/number4'
   else
-    flash[:number3] = 'INCORRECT. <a href="/number3">Back</a> '
+    flash[:number3] =  'Opps, try again!  <a href="/number3">Back</a> '
   end
 end
 
@@ -109,7 +109,7 @@ post "/number4" do
     @current_user.update({score: score})
     redirect '/number5'
   else
-    flash[:number4] = 'INCORRECT. <a href="/number4">Back</a> '
+    flash[:number4] =  'Opps, try again!  <a href="/number4">Back</a> '
   end
 end
 
@@ -126,7 +126,7 @@ post "/number5" do
     @current_user.update({score: score})
     redirect '/grats'
   else
-    flash[:number5] = 'INCORRECT. <a href="/number5">Back</a> '
+    flash[:number5] =  'Opps, try again!  <a href="/number5">Back</a> '
   end
 end
 

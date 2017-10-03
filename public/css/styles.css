@@ -27,7 +27,7 @@ form {
 
 .letters {
   padding: 5px;
-  font-size: 200px;
+  font-size: 150px;
   font-weight: bold;
   font-family: 'CFCrayons-Regular';
 
@@ -84,7 +84,6 @@ h1 {
 }*/
 
 body {
-  color: blue;
   font-family: 'Roboto', sans-serif;
   background-color: #bff0ff;
 }
@@ -107,4 +106,13 @@ body {
 }
 .radio:checked{
   border:20px solid #4099ff;
+}
+
+.btn {
+  background-color: white;
+  color: black;
+}
+
+a {
+  color: black;
 }

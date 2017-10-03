@@ -92,6 +92,14 @@ body {
   font-size: 20px;
 }
 
+label {
+  font-size: 20px;
+}
+
+img {
+  margin: 10px;
+}
+
 .radio {
   -webkit-appearance:button;
   -moz-appearance:button;
@@ -111,6 +119,7 @@ body {
 .btn {
   background-color: white;
   color: black;
+  font-size: 15px;
 }
 
 a {

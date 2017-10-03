@@ -14,6 +14,10 @@ get "/" do
   erb(:index)
 end
 
+get "/false_user" do
+  erb(:false_user)
+end
+
 post "/login" do
   username = params.fetch("username")
   User.all.each do |user|
@@ -22,7 +26,7 @@ post "/login" do
       password = params.fetch("password")
       redirect '/'
     else
-      flash[:number1] = 'Username does not exist. <a href="/">Back</a> '
+      redirect "/false_user"
     end
   end
 end
@@ -58,7 +62,7 @@ post "/number1" do
     @current_user.update({score: score})
     redirect '/number2'
   else
-    flash[:number1] = 'Opps, try again! <a href="/number1">Back</a> '
+    erb(:incorrect)
   end
 end
 
@@ -75,7 +79,7 @@ post "/number2" do
     @current_user.update({score: score})
     redirect '/number3'
   else
-    flash[:number2] =  'Opps, try again!  <a href="/number2">Back</a> '
+    erb(:incorrect)
   end
 end
 
@@ -92,7 +96,7 @@ post "/number3" do
     @current_user.update({score: score})
     redirect '/number4'
   else
-    flash[:number3] =  'Opps, try again!  <a href="/number3">Back</a> '
+    erb(:incorrect)
   end
 end
 
@@ -109,7 +113,7 @@ post "/number4" do
     @current_user.update({score: score})
     redirect '/number5'
   else
-    flash[:number4] =  'Opps, try again!  <a href="/number4">Back</a> '
+    erb(:incorrect)
   end
 end
 
@@ -126,7 +130,7 @@ post "/number5" do
     @current_user.update({score: score})
     redirect '/grats'
   else
-    flash[:number5] =  'Opps, try again!  <a href="/number5">Back</a> '
+    erb(:incorrect)
   end
 end
 
@@ -148,7 +152,7 @@ post "/color1" do
     @current_user.update({score: score})
     redirect '/color2'
   else
-    flash[:color1] = 'INCORRECT. <a href="/color1">Back</a> '
+    erb(:incorrect)
   end
 end
 
@@ -165,7 +169,7 @@ post "/color2" do
     @current_user.update({score: score})
     redirect '/color3'
   else
-    flash[:color2] = 'INCORRECT. <a href="/color2">Back</a> '
+    erb(:incorrect)
   end
 end
 
@@ -182,7 +186,7 @@ post "/color3" do
     @current_user.update({score: score})
     redirect '/color4'
   else
-    flash[:color3] = 'INCORRECT. <a href="/color3">Back</a> '
+    erb(:incorrect)
   end
 end
 
@@ -199,7 +203,7 @@ post "/color4" do
     @current_user.update({score: score})
     redirect '/color5'
   else
-    flash[:color4] = 'INCORRECT. <a href="/color4">Back</a> '
+    erb(:incorrect)
   end
 end
 
@@ -216,7 +220,7 @@ post "/color5" do
     @current_user.update({score: score})
     redirect '/grats'
   else
-    flash[:color5] = 'INCORRECT. <a href="/color5">Back</a> '
+    erb(:incorrect)
   end
 end
 

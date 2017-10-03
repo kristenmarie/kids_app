@@ -25,10 +25,9 @@ post "/login" do
       session[:id] = params.fetch("username")
       password = params.fetch("password")
       redirect '/'
-    else
-      erb(:false_user)
     end
   end
+  erb(:false_user)
 end
 
 post "/create-user" do
@@ -328,6 +327,91 @@ end
 post "/math5" do
   answer = params["answer"]
   if answer == "+"
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/grats'
+  else
+    erb(:incorrect)
+  end
+end
+
+get("/spelling1") do
+  @current_user = User.find_by name: @user
+  erb(:spelling1)
+end
+
+post "/spelling1" do
+  answer = params["answer"].downcase
+  if answer == "frog"
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/spelling2'
+  else
+    erb(:incorrect)
+  end
+end
+
+get("/spelling2") do
+  @current_user = User.find_by name: @user
+  erb(:spelling2)
+end
+
+post "/spelling2" do
+  answer = params["answer"].downcase
+  if answer == "bear"
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/spelling3'
+  else
+    erb(:incorrect)
+  end
+end
+
+get("/spelling3") do
+  @current_user = User.find_by name: @user
+  erb(:spelling3)
+end
+
+post "/spelling3" do
+  answer = params["answer"].downcase
+  if answer == "lion"
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/spelling4'
+  else
+    erb(:incorrect)
+  end
+end
+
+get("/spelling4") do
+  @current_user = User.find_by name: @user
+  erb(:spelling4)
+end
+
+post "/spelling4" do
+  answer = params["answer"].downcase
+  if answer == "goat"
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/spelling5'
+  else
+    erb(:incorrect)
+  end
+end
+
+get("/spelling5") do
+  @current_user = User.find_by name: @user
+  erb(:spelling5)
+end
+
+post "/spelling5" do
+  answer = params["answer"].downcase
+  if answer == "monkey"
     @current_user = User.find_by name: @user
     score = @current_user.score.to_i + 1
     @current_user.update({score: score})

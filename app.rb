@@ -247,3 +247,21 @@ post('/add-word') do
     erb(:errors)
   end
 end
+
+get('/word_edit/:id') do
+  @word = Word.find(params[:id])
+  @words = Word.all
+  erb(:word_edit)
+end
+
+patch('/update-word') do
+  word = Word.find(params.fetch("word_id").to_i)
+  word.update({name: params["new_word"]})
+  redirect "/letters/" + word.letter_id.to_s
+end
+
+delete('/delete-word') do
+  @word = Word.find(params.fetch("word_id").to_i)
+  @word.delete
+  redirect "/letters"
+end

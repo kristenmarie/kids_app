@@ -256,7 +256,6 @@ post('/add-word') do
   end
 end
 
-<<<<<<< HEAD
 get("/math1") do
   @current_user = User.find_by name: @user
   erb(:math1)
@@ -450,30 +449,4 @@ post "/spelling5" do
     @word.delete
     redirect "/letters"
 
-=======
-get('/word_edit/:id') do
-  @current_user = User.find_by name: @user
-  @word = Word.find(params[:id])
-  @words = Word.all
-  erb(:word_edit)
-end
-
-patch('/update-word') do
-  @current_user = User.find_by name: @user
-  @word = Word.find(params.fetch("word_id").to_i)
-  if @word.charAt[0] == @letter.name
-    word.update({name: params["new_word"]})
-    redirect "/letters/" + word.letter_id.to_s
-  else
-    @error_type = word
-    erb(:error)
-  end
-end
-
-delete('/delete-word') do
-  @current_user = User.find_by name: @user
-  @word = Word.find(params.fetch("word_id").to_i)
-  @word.delete
-  redirect "/letters"
->>>>>>> linda/snow
 end

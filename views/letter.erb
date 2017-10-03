@@ -1,8 +1,17 @@
-<center><h1>Add a word that starts with "<%= @letter.name %>" </h1></center>
+<div class="row">
+  <center><h1>Add a word that starts with "<%= @letter.name %>"</h1></center>
+  <div class="col-md-4">
+    <h3>Current Score: <%= @current_user.score %></h3>
+  </div>
+  <div class="col-md-4">
 
-<h3>Current Score: <%= @current_user.score %></h3>
-
-<h3>Words</h3>
+  </div>
+  <div class="col-md-4">
+    <div class="home-button">
+      <button type="button" name="button" class="btn"><a href="/">Home</a></button>
+    </div>
+  </div>
+</div>
 <ul>
   <% @words.each do |word| %>
     <% if word.letter_id == @letter.id %>
@@ -11,11 +20,12 @@
   <%end%>
 </ul>
 
-  <form class="form-group" action="/add-word" method="post">
+  <center><form class="form-group" action="/add-word" method="post">
     <input type="hidden" name="letter_id" value="<%= @letter.id%>">
     <label for="word">Add your word:</label>
     <input type="text" name="word" class="form-control"><br>
     <button type="submit" class="btn btn-primary">Add</button>
   </form>
 
-<a href='/'>HOME</a>
+<button type="button" name="button" class="btn"><a href='/letters'>Back</a></button>
+<button type="button" name="button" class="btn"><a href='/'>Home</a></button></center>

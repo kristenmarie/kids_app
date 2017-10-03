@@ -437,7 +437,7 @@ end
     @current_user = User.find_by name: @user
     @word = Word.find(params.fetch("word_id").to_i)
     @letter = Letter.find(@word.letter_id.to_i)
-    if @word.name[0]== @letter.name
+    if @word.name[0].downcase == @letter.name.downcase
       @word.update({name: params["new_word"]})
       redirect "/letters/" + @word.letter_id.to_s
     else

@@ -436,12 +436,13 @@ end
   patch('/update-word') do
     @current_user = User.find_by name: @user
     @word = Word.find(params.fetch("word_id").to_i)
-    if @word.charAt[0] == @letter.name
-      word.update({name: params["new_word"]})
-      redirect "/letters/" + word.letter_id.to_s
+    @letter = Letter.find(@word.letter_id.to_i)
+    if @word.name[0]== @letter.name
+      @word.update({name: params["new_word"]})
+      redirect "/letters/" + @word.letter_id.to_s
     else
-      @error_type = word
-      erb(:error)
+      @error_type = @word
+      erb(:errors)
     end
   end
 

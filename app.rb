@@ -255,9 +255,14 @@ get('/word_edit/:id') do
 end
 
 patch('/update-word') do
-  word = Word.find(params.fetch("word_id").to_i)
-  word.update({name: params["new_word"]})
-  redirect "/letters/" + word.letter_id.to_s
+  @word = Word.find(params.fetch("word_id").to_i)
+  if @word.charAt[0] == @letter.name
+    word.update({name: params["new_word"]})
+    redirect "/letters/" + word.letter_id.to_s
+  else
+    @error_type = word
+    erb(:error)
+  end
 end
 
 delete('/delete-word') do

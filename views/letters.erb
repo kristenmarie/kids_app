@@ -2,7 +2,7 @@
 
 <ul>
    <% @letters.each do |letter| %>
-    <li><a href="/letters/<%=letter.id%>"><%=letter.name%></a></li>
+    <a class="letters" href="/letters/<%=letter.id%>"><%=letter.name%></a>
     <% end %>
 </ul>
 

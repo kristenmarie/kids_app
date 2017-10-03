@@ -232,6 +232,18 @@ get "/letters" do
 end
 
 get "/letters/:id" do
-  @letter = Letter.find(params.fetch('id').to_i)
+  @letter = Letter.find(params[:id])
+  @words = Word.all()
   erb(:letter)
+end
+
+post('/add-word') do
+  letter_id = params.fetch("letter_id").to_i
+  word = Word.new({name: params.fetch('word'), letter_id: letter_id})
+  if word.save
+    redirect '/letters/' + letter_id.to_s
+  else
+    @error_type = word
+    erb(:errors)
+  end
 end

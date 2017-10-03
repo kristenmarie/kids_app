@@ -21,6 +21,47 @@ form {
 
 .home {
   text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+.letters {
+  padding: 5px;
+  font-size: 200px;
+  font-weight: bold;
+  font-family: 'CFCrayons-Regular';
+
+  color: #f35626;
+    background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-animation: hue 10s infinite linear;
+}
+
+@-webkit-keyframes hue {
+    from {
+      -webkit-filter: hue-rotate(0deg);
+    }
+
+    to {
+      -webkit-filter: hue-rotate(360deg);
+    }
+}
+
+.banner {
+  font-size: 200px;
+}
+
+.jumbotron {
+  background: url('../img/banner.jpg') no-repeat;
+  background-size: 100%;
+  text-shadow: black 0.3em 0.3em 0.3em;
+  color: white;
+
+}
+
+.jumbotron h1{
+  font-size: 100px;
 }
 
 .grats {
@@ -28,11 +69,24 @@ form {
 }
 
 h1 {
+  font-size: 80px;
+  font-weight: bold;
   font-family: 'Pangolin', cursive;
 }
 
+/*body .btn {
+  border-radius: 50%;
+  padding: 15px 32px;
+  background-color: #f23a3a;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}*/
+
 body {
+  color: blue;
   font-family: 'Roboto', sans-serif;
+  background-color: #bff0ff;
 }
 
 .text {

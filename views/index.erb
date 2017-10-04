@@ -1,6 +1,7 @@
 <% if @user %>
   <div class="home">
     <h2>Welcome <%= @user %>!</h2>
+    <button type="button" name="button" class="btn"><a href="/progress/<%= @current_user.id %>">Check Your Progress</a></button>
     <h3>Your score is:</h3>
     <h3> &#9734; <%= @current_user.score %> &#9734;</h3>
   </div>

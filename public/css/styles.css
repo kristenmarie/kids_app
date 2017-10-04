@@ -22,6 +22,10 @@ form {
   float: right;
 }
 
+#book {
+  float: right;
+}
+
 #bag {
   margin-top: 60px;
 }

@@ -1,11 +1,13 @@
 <h2>Something has gone wrong!</h2>
-
-<% if @error_type.errors.any? %>
-  <ul>
-    <% @error_type.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
-    <% end %>
-  </ul>
+<% if @error_type != "" %>
+  <% if @error_type.errors.any? %>
+    <ul>
+      <% @error_type.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
 <% end %>
+
 
 <a href="javascript:history.back()">Try again</a>

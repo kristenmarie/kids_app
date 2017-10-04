@@ -245,13 +245,20 @@ end
 post('/add-word') do
   @current_user = User.find_by name: @user
   letter_id = params.fetch("letter_id").to_i
-  word = Word.new({name: params.fetch('word'), letter_id: letter_id})
-  if word.save
-    score = @current_user.score.to_i + 1
-    @current_user.update({score: score})
-    redirect '/letters/' + letter_id.to_s
+  @letter = Letter.find(letter_id)
+  @word = params.fetch("word").downcase
+  if @word[0] == @letter.name.downcase
+    new_word = Word.new({name: params.fetch('word'), letter_id: letter_id})
+    if new_word.save
+      score = @current_user.score.to_i + 1
+      @current_user.update({score: score})
+      redirect '/letters/' + letter_id.to_s
+    else
+      @error_type = word
+      erb(:errors)
+    end
   else
-    @error_type = word
+    @error_type = ""
     erb(:errors)
   end
 end

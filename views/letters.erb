@@ -10,8 +10,11 @@
   </div>
 </div>
 
-<ul>
-   <% @letters.each do |letter| %>
-    <a class="letters" href="/letters/<%=letter.id%>"><%=letter.name%></a>
-    <% end %>
-</ul>
+
+<div class="row">
+ <% @letters.each do |letter| %>
+    <div class="col-md-2">
+      <center><a class="letters" href="/letters/<%=letter.id%>"><%=letter.name%></a></center>
+    </div>
+  <% end %>
+</div>

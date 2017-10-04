@@ -98,7 +98,6 @@ _A Web Application that allows the user (children) create an account with their 
   * Example Output: home page
 
 
-
 ## Support and contact details
 
 _Please contact Megan at meganannetteolson@yahoo.com, Kristen at  , Linda at linda.luu1226@gmail.com , or Snow at with questions, comments, or issues._

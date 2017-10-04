@@ -254,7 +254,7 @@ post('/add-word') do
       @current_user.update({score: score})
       redirect '/letters/' + letter_id.to_s
     else
-      @error_type = word
+      @error_type = new_word
       erb(:errors)
     end
   else
@@ -433,29 +433,115 @@ post "/spelling5" do
   end
 end
 
-  get('/word_edit/:id') do
-    @current_user = User.find_by name: @user
-    @word = Word.find(params[:id])
-    @words = Word.all
-    erb(:word_edit)
-  end
+get "/science1" do
+  @current_user = User.find_by name: @user
+  erb(:science1)
+end
 
-  patch('/update-word') do
+post "/science1" do
+  answer = params["answer"]
+  if answer == "desert"
     @current_user = User.find_by name: @user
-    @word = Word.find(params.fetch("word_id").to_i)
-    @letter = Letter.find(@word.letter_id.to_i)
-    if @word.name[0].downcase == @letter.name.downcase
-      @word.update({name: params["new_word"]})
-      redirect "/letters/" + @word.letter_id.to_s
-    else
-      @error_type = @word
-      erb(:errors)
-    end
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/science2'
+  else
+    erb(:incorrect)
   end
+end
 
-  delete('/delete-word') do
+get "/science2" do
+  @current_user = User.find_by name: @user
+  erb(:science2)
+end
+
+post "/science2" do
+  answer = params["answer"]
+  if answer == "ocean"
     @current_user = User.find_by name: @user
-    @word = Word.find(params.fetch("word_id").to_i)
-    @word.delete
-    redirect "/letters"
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/science3'
+  else
+    erb(:incorrect)
   end
+end
+
+get "/science3" do
+  @current_user = User.find_by name: @user
+  erb(:science3)
+end
+
+post "/science3" do
+  answer = params["answer"]
+  if answer == "rainforest"
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/science4'
+  else
+    erb(:incorrect)
+  end
+end
+
+get "/science4" do
+  @current_user = User.find_by name: @user
+  erb(:science4)
+end
+
+post "/science4" do
+  answer = params["answer"]
+  if answer == "tree"
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/science5'
+  else
+    erb(:incorrect)
+  end
+end
+
+get "/science5" do
+  @current_user = User.find_by name: @user
+  erb(:science5)
+end
+
+post "/science5" do
+  answer = params["answer"]
+  if answer == "arctic"
+    @current_user = User.find_by name: @user
+    score = @current_user.score.to_i + 1
+    @current_user.update({score: score})
+    redirect '/grats'
+  else
+    erb(:incorrect)
+  end
+end
+
+
+get('/word_edit/:id') do
+  @current_user = User.find_by name: @user
+  @word = Word.find(params[:id])
+  @words = Word.all
+  erb(:word_edit)
+end
+
+patch('/update-word') do
+  @current_user = User.find_by name: @user
+  @word = Word.find(params.fetch("word_id").to_i)
+  @letter = Letter.find(@word.letter_id.to_i)
+  if @word.name[0].downcase == @letter.name.downcase
+    @word.update({name: params["new_word"]})
+    redirect "/letters/" + @word.letter_id.to_s
+  else
+    @error_type = @word
+    erb(:errors)
+  end
+end
+
+delete('/delete-word') do
+  @current_user = User.find_by name: @user
+  @word = Word.find(params.fetch("word_id").to_i)
+  @word.delete
+  redirect "/letters"
+end

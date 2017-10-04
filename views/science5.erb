@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-md-4">
+    <h3>Current Score: <%= @current_user.score %></h3>
+  </div>
+  <div class="col-md-4">
+    <center><h2>Animal Science</h2></center>
+  </div>
+  <div class="col-md-4">
+    <div class="home-button">
+      <button type="button" name="button" class="btn"><a href="/">Home</a></button>
+    </div>
+  </div>
+</div>
+
+<div class="color_picture">
+  <center><img src="../img/reindeer.png"></center>
+</div>
+
+<center><h3>What type of environment does the Reindeer live in?</h3>
+  <form action="/science5" method="post" >
+  <div class="radio-inline">
+    <label>
+      <input name="answer" type="radio" value="arctic" class="radio"><br><br>
+      <div class="text2">
+        Arctic
+      </div>
+    </label>
+  </div>
+
+  <div class="radio-inline">
+    <label>
+      <input name="answer" type="radio" value="desert" class="radio"><br><br>
+      <div class="text2">
+        Desert
+      </div>
+    </label>
+  </div>
+
+  <div class="radio-inline">
+    <label>
+      <input name="answer" type="radio" value="swamp" class="radio"><br><br>
+      <div class="text2">
+        Swamp
+      </div>
+    </label>
+  </div>
+  <br><button type="submit" name="button" class="btn">Go!</button>
+</form></center>

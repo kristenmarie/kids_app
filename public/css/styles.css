@@ -146,18 +146,22 @@ a {
   width: 250px;
 }
 
-.book {
-  float: center;
-}
-
 .page {
   font-weight: bold;
   font-size: 100px;
 }
 
 .pagetext {
-  font-family: 'Roboto', sans-serif;
+  padding-top: 50px;
   font-weight: bold;
-  font-size: 50px;
-  color: red;
+  font-size: 20px;
+  color: black;
+}
+
+.bookcontainer {
+  background: url('../img/openbook4.png') no-repeat;
+  background-size: 1500px 1000px;
+  width: 1600px;
+  height: 1500px;
+  padding-top: 300px;
 }

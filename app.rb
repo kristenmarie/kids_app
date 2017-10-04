@@ -487,3 +487,19 @@ end
 get ('/page7') do
   erb(:page7)
 end
+
+get ('/page8') do
+  erb(:page8)
+end
+
+get ('/page9') do
+  erb(:page9)
+end
+
+get ('/page10') do
+  erb(:page10)
+end
+
+get ('/page11') do
+  erb(:page11)
+end

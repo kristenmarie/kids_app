@@ -568,7 +568,6 @@ post "/science5" do
   end
 end
 
-
 get('/word_edit/:id') do
   @current_user = User.find_by name: @user
   @word = Word.find(params[:id])

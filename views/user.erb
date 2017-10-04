@@ -1,18 +1,18 @@
-<h2><%= @current_user.name %>'s Progress</h2>
-<div class="row">
+<center><div class="row">
   <div class="col-md-4">
     <h3>Your current score: <%= @current_user.score %></h3>
   </div>
   <div class="col-md-4">
+    <h2><%= @current_user.name %>'s Progress</h2>
   </div>
   <div class="col-md-2">
-    <button type="button" class="btn" name="button"><a href="/">Home</a></button>
+    <button type="button" class="btn home-button" name="button"><a href="/">Home</a></button>
   </div>
 </div>
 
 
 
-<canvas id="myChart" width="200" height="200"></canvas>
+<canvas id="myChart" width="800" height="800"></canvas>
 <% if @current_user.age <= 6  %>
   <script>
     var ctx = document.getElementById("myChart").getContext('2d');
@@ -35,13 +35,7 @@
             }]
         },
         options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero:true
-                    }
-                }]
-            }
+          responsive: false
         }
     });
   </script>
@@ -79,4 +73,4 @@
         }
     });
   </script>
-<% end %>
+<% end %></center>

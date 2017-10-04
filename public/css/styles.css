@@ -10,6 +10,31 @@ form {
   max-width: 250px;
 }
 
+#bee {
+  float: right;
+}
+
+#snail {
+  margin-top: 10px;
+}
+
+#cow {
+  float: right;
+}
+
+#bag {
+  margin-top: 60px;
+}
+.well {
+  background-color: rgb(247, 239, 185);
+}
+
+.border {
+  border-style: dotted;
+  border-width: 5px;
+  border-color: #3ce8ae;
+}
+
 .math {
   max-width: 900px;
 }
@@ -24,6 +49,7 @@ form {
 .login {
   text-align: center;
   margin-left: 15%;
+  margin-top: 9%;
 }
 
 .home {

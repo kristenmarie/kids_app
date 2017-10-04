@@ -8,41 +8,57 @@
 <% end %>
 
 <% if !@user %>
-  <div class="row login">
-    <div class="col-md-6">
-      <form action="/login" method="post">
-      <h3>Existing User:</h3>
-        <div class="form-group">
-          <label for="username">Username:</label>
-          <input type="text" name="username" class="form-control" placeholder="Username" required>
-        </div>
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input type="password" name="password" class="form-control" placeholder="Password" required>
-        </div>
-        <button type="submit" name="button" class="btn btn-primary">Login</button>
-      </form>
-    </div>
+  <div class="border">
+    <img src="img/apple.png" id="apple">
+    <img src="img/bee.png" id="bee">
 
-    <div class="col-md-6">
-      <form action="/create-user" method="post">
-        <h3>Create Account:</h3>
-        <div class="form-group">
-          <label for="username">Username:</label>
-          <input type="text" name="username" class="form-control" placeholder="Password" required>
-        </div>
-        <div class="form-group">
-          <label for="password">Password:</label>
-          <input type="password" name="password" class="form-control" placeholder="Username" required>
-        </div>
-        <label for="age">Age:</label>
-        <input type="age" name="age" class="form-control" placeholder="Age" required> <br>
-        <button type="submit" name="button" class="btn btn-primary">Create Account</button>
-      </form>
-    </div>
+    <div class="row login">
+      <div class="col-md-6">
+        <!-- <div class="well" -->
+          <form action="/login" method="post">
+          <h3>Existing User:</h3>
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" name="username" class="form-control" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" name="password" class="form-control" placeholder="Password" required>
+            </div>
+            <button type="submit" name="button" class="btn btn-primary">Login</button>
+          </form>
+        <!-- </div> -->
+      </div>
+
+
+      <div class="col-md-6">
+        <!-- <div class="well"> -->
+          <form action="/create-user" method="post">
+            <h3>Create Account:</h3>
+            <div class="form-group">
+              <label for="username">Username:</label>
+              <input type="text" name="username" class="form-control" placeholder="Username" required>
+            </div>
+            <div class="form-group">
+              <label for="password">Password:</label>
+              <input type="password" name="password" class="form-control" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+              <label for="age">Age:</label>
+              <input type="age" name="age" class="form-control" placeholder="Age" required> <br>
+            </div>
+            <button type="submit" name="button" class="btn btn-primary">Create Account</button>
+          </form>
+        <!-- </div> -->
+      </div>
+    </div><br><br><br><br><br><br><br><br>
+    <img src="img/snail.png" id="snail">
+    <img src="img/bag.png" id="bag">
+    <img src="img/cow.png" id="cow">
   </div>
 
 <% else %>
+
   <center><form action="/logout" method="post">
     <button type="submit" name="button" class="btn">Log Out</button>
   </form>

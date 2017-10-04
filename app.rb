@@ -459,3 +459,31 @@ end
     @word.delete
     redirect "/letters"
   end
+
+get ('/page1') do
+  erb(:page1)
+end
+
+get ('/page2') do
+  erb(:page2)
+end
+
+get ('/page3') do
+  erb(:page3)
+end
+
+get ('/page4') do
+  erb(:page4)
+end
+
+get ('/page5') do
+  erb(:page5)
+end
+
+get ('/page6') do
+  erb(:page6)
+end
+
+get ('/page7') do
+  erb(:page7)
+end

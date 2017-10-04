@@ -145,3 +145,19 @@ a {
   height: 150px;
   width: 250px;
 }
+
+.book {
+  float: center;
+}
+
+.page {
+  font-weight: bold;
+  font-size: 100px;
+}
+
+.pagetext {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 50px;
+  color: red;
+}

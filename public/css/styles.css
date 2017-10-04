@@ -10,6 +10,9 @@ form {
   max-width: 250px;
 }
 
+.math {
+  max-width: 900px;
+}
 .game {
   max-width: 45px;
 }
@@ -106,6 +109,14 @@ body {
   background-color: #bff0ff;
   margin-bottom: 100px;
 }
+
+.numbers {
+  margin-top: 80px;
+  margin-bottom: 50px;
+  font-family: 'Rock Salt', cursive;
+  font-size: 60px;
+}
+
 
 .text {
   font-size: 20px;

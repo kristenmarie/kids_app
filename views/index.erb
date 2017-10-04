@@ -69,17 +69,21 @@
   <h3>Choose a game:</h3><br>
   <% if @current_user.age <= 6 %>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-3">
         <button type="submit" name="button" class="btn"><a href="/letters">Letters</a></button><br><br>
         <img src="../img/abc.jpg" class="front">
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <button type="submit" name="button" class="btn"><a href="/number1">Numbers</a></button><br><br>
         <img src="../img/123.jpg" class="front">
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <button type="submit" name="button" class="btn"><a href="/color1">Colors</a></button><br><br>
         <img src="../img/color.jpg" class="front">
+      </div>
+      <div class="col-md-3">
+        <button type="submit" name="button" class="btn"><a href="/page1">Reading Time</a></button><br><br>
+        <img src="../img/book2.png" class="front">
       </div>
     <% else %>
     <div class="row">

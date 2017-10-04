@@ -198,3 +198,25 @@ a {
   height: 200px;
   width: 300px;
 }
+
+.page {
+  font-weight: bold;
+  font-size: 100px;
+}
+
+.pagetext {
+  margin-left: 259px;
+  padding-top: 50px;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+}
+
+.bookcontainer {
+  background: url('../img/openbook4.png') no-repeat;
+  background-size: 1500px 900px;
+  width: 1600px;
+  height: 1500px;
+  padding-top: 200px;
+  text-align: center;
+}

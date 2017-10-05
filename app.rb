@@ -628,6 +628,41 @@ get('/maze7') do
   erb(:maze7)
 end
 
+get('/maze8') do
+  erb(:maze8)
+end
+
+get('/maze9') do
+  erb(:maze9)
+end
+
+get('/maze10') do
+  erb(:maze10)
+end
+
+get('/maze11') do
+  erb(:maze11)
+end
+
+get('/maze12') do
+  erb(:maze12)
+end
+
+get('/maze13') do
+  erb(:maze13)
+end
+
+get('/maze14') do
+  erb(:maze14)
+end
+
+get('/maze15') do
+  erb(:maze15)
+end
+
+get('/maze16') do
+  erb(:maze16)
+end
 
 get ('/page1') do
   erb(:page1)

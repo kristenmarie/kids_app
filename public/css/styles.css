@@ -34,7 +34,10 @@ form {
 }
 
 .border {
-  border-style: dotted;
+  background: url('/img/frame.png') no-repeat;
+  background-size: 1200px 1000px;
+  height: 1200px;
+  width: 1200px;
   border-width: 5px;
   border-color: #3ce8ae;
 }
@@ -99,6 +102,11 @@ h2 {
     }
 }
 
+#banner {
+  margin-top: 100px;
+  font-size: 110px;
+}
+
 .banner {
   font-size: 200px;
 }
@@ -106,9 +114,9 @@ h2 {
 .jumbotron {
   background: url('../img/banner.jpg') no-repeat;
   background-size: 100%;
+  height: 400px;
   text-shadow: black 0.3em 0.3em 0.3em;
   color: white;
-
 }
 
 .jumbotron h1{
@@ -125,14 +133,11 @@ h1 {
   font-family: 'Pangolin', cursive;
 }
 
-/*body .btn {
-  border-radius: 50%;
-  padding: 15px 32px;
-  background-color: #f23a3a;
-  font-size: 20px;
+h3 {
+  font-size: 50px;
   font-weight: bold;
-  color: black;
-}*/
+  font-family: 'Pangolin', cursive;
+}
 
 body {
   font-family: 'Roboto', sans-serif;
@@ -219,4 +224,53 @@ a {
   height: 1500px;
   padding-top: 200px;
   text-align: center;
+}
+
+.bookcover {
+  background: url('../img/bookcover.png') no-repeat;
+  background-size: 1100px 1000px;
+  width: 1600px;
+  height: 1000px;
+  padding-top: 80px;
+  padding-right: 300px;
+  text-align: center;
+}
+
+#pigs {
+  margin-right: 180px;
+}
+
+.hauntedhouse {
+  font-family: 'Pangolin', cursive;
+}
+
+.hauntedhouse_kitchen{
+  font-family: 'Pangolin', cursive;
+  background: url('/img/kitchen.jpeg') no-repeat;
+  background-size: 900px 700px;
+  background-position: center;
+  height: 1000px;
+  width: 1000px;
+}
+
+.hauntedhouse_westwing {
+  font-family: 'Pangolin', cursive;
+  background: url('/img/hallway2.png') no-repeat;
+  background-size: 900px 700px;
+  background-position: center;
+  height: 1000px;
+  width: 1000px;
+}
+
+.hauntedhouse_masterroom {
+  font-family: 'Pangolin', cursive;
+  background: url('/img/masterroom.jpg') no-repeat;
+  background-size: 900px 700px;
+  background-position: center;
+  height: 1000px;
+  width: 1000px;
+}
+
+img #spider {
+  margin-left: 350px;
 }

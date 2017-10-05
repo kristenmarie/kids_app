@@ -229,6 +229,7 @@ a {
 .bookcover {
   background: url('../img/bookcover.png') no-repeat;
   background-size: 1100px 1000px;
+  background-position:
   width: 1600px;
   height: 1000px;
   padding-top: 80px;
@@ -265,6 +266,15 @@ a {
 .hauntedhouse_masterroom {
   font-family: 'Pangolin', cursive;
   background: url('/img/masterroom.jpg') no-repeat;
+  background-size: 900px 700px;
+  background-position: center;
+  height: 1000px;
+  width: 1000px;
+}
+
+.hauntedhouse_stairway {
+  font-family: 'Pangolin', cursive;
+  background: url('/img/stairway.jpeg') no-repeat;
   background-size: 900px 700px;
   background-position: center;
   height: 1000px;
